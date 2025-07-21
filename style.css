@@ -1,26 +1,36 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 @font-face {
     font-family: Outfit;
     src: url('font/Outfit-VariableFont_wght.ttf');
 }
 
+
+@font-face {
+    font-family: Roboto;
+    src: url('font/RobotoSerif-VariableFont_GRAD\,opsz\,wdth\,wght.ttf');
+}
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
 .navbar {
-    background-color: #1c1c1c;
+
+    background-color: black;
     color: white;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap;    
     position: sticky;
     top: 0;
     z-index: 999;
-
+  
 
 
 }
@@ -108,10 +118,11 @@ nav ul li a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 100dvh;
+    height: 100vh;
     width: 100%;
     background: url('Images/back.jpg') no-repeat center center/cover;
     position: relative;
+     scroll-margin-top: 90px;
 }
 
 
@@ -160,9 +171,10 @@ nav ul li a:hover {
     font-weight: 700;
     font-size: 70px;
     text-align: center;
+
     margin-bottom: 20px;
     line-height: 76px;
-    letter-spacing: 0.3px;
+    letter-spacing: 1.5px;
 
 }
 
@@ -225,84 +237,173 @@ nav ul li a:hover {
 }
 
 
+#services {
 
+    position: relative;
+    text-align: center;
+    justify-content: center;
+    padding:40px 60px;
+    
+  /* padding-top: 90px; */
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* -------------------------------------------------media-queries---------------------------------------------------------------- */
-
-
-@media(max-width:768px) {
-    .logo {
-        width: 25%;
-    }
-
-    .content {
-        padding: 30px 20px;
-    }
-
-    .content h5 {
-        font-size: 12px;
-    }
-
-    .content h5 span {
-        font-size: 12px;
-    }
-
-    .content h1 {
-        font-size: 50px;
-        line-height: 55px;
-        margin-top: 25px;
-
-    }
-
-    .content p {
-        font-size: 12px;
-        margin-top: 25px;
-    }
-
-
-    .buttons {
-        margin-top: 25px;
-        gap: 25px;
-
-    }
+    scroll-margin-top: 90px;
 }
 
 
+#services h2 {
+    color: #E94560;
+    font-size: 24px;
+    font-weight: 600;
+    font-family: 'Roboto'semiBold;
+}
+
+
+#services h3 {
+    color: black;
+    font-family: 'Outfit', semiBold;
+    font-weight: 600;
+    font-size: 50px;
+    margin-top: 10px;
+}
+
+.cards {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-top: 50px;
+
+
+}
+
+
+.card {
+    background-color: #F4F4F4;
+    padding: 25px;
+    border-radius: 16px;
+    width: calc(33.33% - 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transition: 0.5s ease-in-out;
+    
+}
+
+
+.card .icon {
+    background-color: #f1435a;
+    color: white;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 50%;
+    margin-bottom: 25px;
+}
+
+
+.card .card-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'Outfit', medium;
+
+}
+
+.card .card-desc {
+    text-align: start;
+    font-family: 'Outfit', medium;
+    font-weight: 400;
+    font-size: 16px;
+
+}
+
+
+.card:hover{
+    background-color: #202020;
+    cursor: pointer;
+}
+
+.card:hover .icon{
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.card:hover .card-title{
+    color: white;
+}
+
+.card:hover .card-desc{
+    color: white;
+}
+
+
+#aboutUs{
+    height:675px;
+    background-color: #202020;
+    display: flex; 
+    flex-wrap: wrap;
+    padding: 50px;
+}
+
+
+.slider {
+  position: absolute;
+  width: 50%;
+  height:70%;
+  perspective: 1000px;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+  background-image: url('Images/sliderImage.jpg'); 
+  background-size: cover;
+  background-position: center;
+  animation: rotateStack  9s infinite ease-in-out;
+  opacity: 0;
+}
+
+
+.slide1 {
+  animation-delay: 0s;
+}
+.slide2 {
+  animation-delay: 3s;
+}
+.slide3 {
+  animation-delay: 6s;
+}
+
+@keyframes rotateStack {
+  0% {
+    transform: translate(-40px, -40px) scale(0.9);
+    opacity: 0.25;
+    z-index: 1;
+  }
+  33.3% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 1;
+    z-index: 3;
+  }
+ 66.6%{
+    transform: translate(40px, 40px) scale(0.9);
+    opacity: 0.25;
+    z-index: 1;
+  }
+  100% {
+    transform: translate(-40px, -40px) scale(0.9);
+    opacity: 0.25;
+    z-index: 1;
+  }
+}
+
+.info{
+ 
+}
+
+
+/* -------------------------------------------------media-queries---------------------------------------------------------------- */
 
 @media (max-width: 1024px) {
 
@@ -319,6 +420,7 @@ nav ul li a:hover {
         display: none;
         gap: 25px;
         padding-right: 0px;
+       
 
     }
 
@@ -334,6 +436,7 @@ nav ul li a:hover {
 
     nav.show {
         display: flex;
+     
     }
 
     .menu-toggle {
@@ -377,5 +480,99 @@ nav ul li a:hover {
 
     }
 
+    .card {
+        width: calc(50% - 20px);
+        
+    }
+
+    .card .icon {
+        font-size: 15px;
+  
+    }
+
+    .card .card-title {
+        font-size: 18px;
+
+    }
+
+    .card .card-desc {
+        font-size: 12px;
 
 }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media(max-width:768px) {
+    .logo {
+        width: 50%;
+    }
+
+    .content {
+        padding: 60px 20px;
+    }
+
+    .content h5 {
+        font-size: 15px;
+    }
+
+    .content h5 span {
+        font-size: 12px;
+    }
+
+    .content h1 {
+        font-size: 40px;
+        line-height: 50px;
+        margin-top: 15px;
+
+    }
+
+    .content p {
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+
+    .buttons {
+        margin-top: 25px;
+        gap: 25px;
+
+    }
+
+
+    #services h3 {
+        font-size: 25px;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+
+}
+
+
+
