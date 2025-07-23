@@ -1,212 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+    <!-- Character Encoding -->
     <meta charset="UTF-8">
+    <!-- Viewport for Responsive Design -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Owl Carousel Testimonial</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Title of the Webpage -->
+    <title>My Website Title</title>
+    <!-- Description for SEO -->
+    <meta name="description" content="This is a sample website description used for SEO purposes.">
+    <!-- Keywords for SEO -->
+    <meta name="keywords" content="HTML, CSS, JavaScript, Web Design">
+    <!-- Author Info -->
+    <meta name="author" content="Your Name Here">
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- jQuery + Owl Carousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f8f8;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            padding: 1rem;
-            box-sizing: border-box;
+        #main-section {
+            max-width: 1440px;
+            margin: 0 auto;
+            padding: 50px 60px;
         }
 
-        .testimonial-card-wrapper {
-            position: relative;
+        .main-container {
+            margin-bottom: 30px;
+        }
+
+        .gallery-item img {
             width: 100%;
-            max-width: 768px;
-            margin-left: auto;
-            margin-right: auto;
-            padding-bottom: 60px;
+            height: auto;
+            display: block;
+            border-radius: 8px;
         }
 
-        .owl-carousel.owl-theme {
-            background-color: #ffffff;
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            text-align: center;
-        }
-
-        @media (min-width: 768px) {
-            .owl-carousel.owl-theme {
-                padding: 3rem;
+        @media (min-width: 1025px) {
+            .owl-carousel {
+                display: flex !important;
+                flex-wrap: wrap;
+                gap: 20px 40px;
             }
-        }
 
-        .item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem 1rem 1.5rem 1rem;
-        }
-
-        .item img {
-            width: 96px;
-            height: 96px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 1.5rem;
-            border: 4px solid #ffffff;
-            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        }
-
-        .item blockquote {
-            font-size: 1.25rem;
-            line-height: 1.75rem;
-            font-weight: 500;
-            color: #374151;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .item blockquote {
-                font-size: 1.5rem;
-                line-height: 2rem;
+            .owl-carousel .owl-stage-outer,
+            .owl-carousel .owl-stage,
+            .owl-carousel .owl-item {
+                all: unset;
             }
-        }
 
-        .item .text-gray-600 {
-            color: #4b5563;
-        }
-
-        .item .font-semibold {
-            font-weight: 600;
-        }
-
-        .item .text-lg {
-            font-size: 1.125rem;
-            line-height: 1.75rem;
-        }
-
-        .item .text-sm {
-            font-size: 0.875rem;
-            line-height: 1.25rem;
-        }
-
-        .item .text-gray-500 {
-            color: #6b7280;
-        }
-
-        .owl-theme .owl-nav button {
-            background: #f75d74 !important;
-            color: white !important;
-            border-radius: 9999px !important;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 1.5rem !important;
-            transition: background-color 0.3s ease;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: none;
-            cursor: pointer;
-        }
-
-        .owl-theme .owl-nav button.owl-prev {
-            margin-right: 10px;
-        }
-
-        .owl-theme .owl-nav button.owl-next {
-            margin-left: 10px;
-        }
-
-        .owl-theme .owl-nav button:hover {
-            background-color: #e04b61 !important;
-        }
-
-        .owl-theme .owl-nav {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 100%;
+            .owl-carousel .gallery-item {
+                width: calc(50% - 20px);
+            }
         }
     </style>
 </head>
+
 <body>
-
-    <div class="testimonial-card-wrapper">
-        <div class="owl-carousel owl-theme">
-            <div class="item">
-                <img src="https://placehold.co/100x100/f75d74/ffffff?text=JM" alt="Jacqueline Miller">
-                <blockquote>
-                    "Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and the company providing the product or service."
-                </blockquote>
-                <div class="text-gray-600">
-                    <p class="font-semibold text-lg">Jacqueline Miller</p>
-                    <p class="text-sm text-gray-500">CEO of an eduport</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://placehold.co/100x100/6366f1/ffffff?text=JD" alt="John Doe">
-                <blockquote>
-                    "This product has truly transformed our workflow. The intuitive design and powerful features make it an indispensable tool for our team."
-                </blockquote>
-                <div class="text-gray-600">
-                    <p class="font-semibold text-lg">John Doe</p>
-                    <p class="text-sm text-gray-500">CTO of a Tech Startup</p>
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="https://placehold.co/100x100/22c55e/ffffff?text=AS" alt="Alice Smith">
-                <blockquote>
-                    "Exceptional customer support and a robust solution. We've seen significant improvements since implementing this service."
-                </blockquote>
-                <div class="text-gray-600">
-                    <p class="font-semibold text-lg">Alice Smith</p>
-                    <p class="text-sm text-gray-500">Marketing Director</p>
-                </div>
-            </div>
+    <section id="main-section">
+        <div class="main-container">
+            <h1>Sample Layout</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nemo placeat, iure minima exercitationem
+                distinctio adipisci tenetur quod veritatis ab explicabo nostrum ipsum asperiores? Ipsum accusantium
+                minima eos accusamus odio.</p>
         </div>
-    </div>
+
+        <div class="gallery-wrapper owl-carousel">
+            <div class="gallery-item"><img src="/Images/design.jpg" alt="Image 1" /></div>
+            <div class="gallery-item"><img src="/Images/marketing.jpg" alt="Image 2" /></div>
+            <div class="gallery-item"><img src="/Images/strategy.jpg" alt="Image 3" /></div>
+            <div class="gallery-item"><img src="/Images/marketing.jpg" alt="Image 4" /></div>
+        </div>
+    </section>
 
     <script>
-        $(document).ready(function(){
-            $(".owl-carousel").owlCarousel({
-                loop: true,
-                margin: 10,
-                nav: true,
-                dots: false,
-                autoplay: true,
-                autoplayTimeout: 5000,
-                autoplayHoverPause: true,
-                responsive: {
-                    0: {
-                        items: 1
-                    },
-                    600: {
-                        items: 1
-                    },
-                    1000: {
-                        items: 1
-                    }
-                },
-                navText: [
-                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>',
-                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>'
-                ]
-            });
-        });
+        let owlInitialized = false;
+
+        function initOrDestroyOwlCarousel() {
+            const $carousel = $('.owl-carousel');
+            const width = window.innerWidth;
+
+            if (width <= 1024 && !owlInitialized) {
+                $carousel.owlCarousel({
+                    items: 1,
+                    loop: true,
+                    margin: 20,
+                    autoplay: true,
+                    smartSpeed: 500,
+                    dots: false
+                });
+                owlInitialized = true;
+            }
+
+            if (width > 1024 && owlInitialized) {
+                $carousel.trigger('destroy.owl.carousel');
+                owlInitialized = false;
+            }
+        }
+
+        $(document).ready(initOrDestroyOwlCarousel);
+        $(window).resize(initOrDestroyOwlCarousel);
+
     </script>
 
+
 </body>
+
 </html>

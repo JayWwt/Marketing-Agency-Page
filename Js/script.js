@@ -43,4 +43,76 @@ function updated2() {
 
 
 
+$(document).ready(
+    function slider_carouselInit() {
+        $('.owl-carousel.testimonials-active').owlCarousel({
+            dots: false,
+            loop: true,
+            margin: 0,
+            items: 1,
+            autoplay: true,
+            nav: true,
+            navText: [
+                "<i class='fas fa-chevron-left'></i>",
+                "<i class='fas fa-chevron-right'></i>"
+            ],
+            smartSpeed: 1000,
+        });
+    }
 
+)
+
+
+$(document).ready(
+    function () {
+        const scrollBtn = document.getElementById("scrollTopBox");
+        window.onscroll = function () {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                scrollBtn.style.display = "block";
+            } else {
+                scrollBtn.style.display = "none";
+            }
+        };
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        }
+    }
+)
+
+
+
+
+
+function togglePortfolioCarousel() {
+    const $carousel = $('.owl-carousel-portfolio');
+
+    if (window.innerWidth <= 1024) {
+        if (!$carousel.hasClass('owl-loaded')) {
+            $carousel.addClass('owl-carousel').owlCarousel({
+                items: 1,
+                margin: 30,
+                loop: true,
+                nav: false,
+                dots: false,
+                autoplay: true
+            });
+            smartSpeed: 1000
+        }
+    } else {
+        if ($carousel.hasClass('owl-loaded')) {
+            $carousel.trigger('destroy.owl.carousel').removeClass('owl-carousel owl-loaded');
+            $carousel.find('.owl-stage-outer').children().unwrap();
+        }
+    }
+}
+
+$(document).ready(function () {
+    togglePortfolioCarousel();
+    $(window).resize(function () {
+        togglePortfolioCarousel();
+    });
+});
