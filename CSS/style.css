@@ -343,7 +343,7 @@ nav ul li a:hover {
     height: 675px;
     background-color: #202020;
     display: flex;
-
+scroll-margin-top: 65px;
     padding: 70px;
 
 }
@@ -511,7 +511,7 @@ nav ul li a:hover {
     position: relative;
     text-align: center;
     justify-content: center;
-    padding: 30px 50px;
+    padding: 10px 50px;
 
     margin: 0 auto;
     scroll-margin-top: 90px;
@@ -692,10 +692,14 @@ nav ul li a:hover {
     column-gap: 10px;
     padding-bottom: 10px;
     padding-top: 10px;
+
 }
 
 
-.col-1, .col-2, .col-3, .col-4 {
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
     display: flex;
     flex-direction: column;
     padding-bottom: 30px;
@@ -955,56 +959,37 @@ hr {
 
 }
 
-.col-8 i:hover{
+.col-8 i:hover {
     background-color: #E94560;
     color: white;
     cursor: pointer;
 }
+
+#scrollTopBox {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    display: none;
+    z-index: 1000;
+    background-color: #E94560;
+    color: white;
+    border-radius: 50%;
+    padding: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+#scrollTopBox:hover {
+    background-color: white;
+}
+
+#scrollTopBox:hover i {
+    color: #E94560;
+}
+
 /* -------------------------------------------------media-queries---------------------------------------------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1170,6 +1155,37 @@ hr {
 
         font-size: 18px;
 
+    }
+
+    .row1,
+    .row2 {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8 {
+        width: 50% !important;
+    }
+
+    .col-8 {
+        flex-wrap: wrap;
+        justify-content: start;
+    }
+
+    .col-8 i {
+        margin-bottom: 10px;
+    }
+
+    .footer-container {
+        padding-left: 40px;
+        padding-right: 40px;
     }
 
 }
@@ -1339,6 +1355,27 @@ hr {
 
         font-size: 7px;
 
+    }
+
+    .row1,
+    .row2 {
+        flex-direction: column;
+    }
+
+    .col-1,
+    .col-2,
+    .col-3,
+    .col-4,
+    .col-5,
+    .col-6,
+    .col-7,
+    .col-8 {
+        width: 100% !important;
+    }
+
+    .footer-container {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
 }
