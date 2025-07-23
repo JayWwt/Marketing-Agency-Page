@@ -40,3 +40,8 @@ function updated2() {
         clearInterval(counts2);
     }
 }
+
+
+
+
+

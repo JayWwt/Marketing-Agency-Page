@@ -508,8 +508,8 @@ nav ul li a:hover {
     position: relative;
     text-align: center;
     justify-content: center;
-    padding: 40px 50px;
-  
+    padding: 30px 50px;
+
     margin: 0 auto;
     scroll-margin-top: 90px;
 }
@@ -573,7 +573,7 @@ nav ul li a:hover {
 .right-column {
     display: flex;
     flex-direction: column;
-   row-gap: 60px;
+    row-gap: 60px;
     width: 48%;
 }
 
@@ -581,36 +581,94 @@ nav ul li a:hover {
     margin-top: 80px;
 }
 
-.blog-content h4{
-    font-family: "Outfit" , sans-serif;
+.blog-content h4 {
+    font-family: "Outfit", sans-serif;
     font-weight: 600;
     font-size: 30px;
 }
 
-.blog-content p{
+.blog-content p {
     font-family: "Outfit", sans-serif;
     font-size: 16px;
     font-weight: 400;
     letter-spacing: 0.5px;
-   color: #E94560;
-   padding-top: 5px;
+    color: #E94560;
+    padding-top: 5px;
 }
 
+#testimonials {
+    padding: 40px 60px;
+    scroll-margin-top: 90px;
+    margin: 0 auto;
+}
 
+.testimonials_wrapper {
+    background: #F4F4F4;
+    padding: 60px 40px;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+}
 
+.testimonials-item img {
+    width: 100px !important;
+    height: 100px !important;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+}
 
+.testimonials-item p {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 31px;
+    margin-bottom: 20px;
+}
 
+.testimonials-item h2 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    margin-top: 20px;
+}
 
+.testimonials-item h3 {
+    font-family: "Outfit", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #E94560;
+    margin-top: 5px;
+}
 
+.owl-nav {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    position: static !important;
+}
 
+.owl-prev, .owl-next {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    color: #000;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
 
-
-
-
-
-
-
-
+.owl-prev:hover, .owl-next:hover {
+    background: #E94560;
+    color: #fff;
+    border-color: #E94560;
+}
 
 
 
@@ -809,7 +867,7 @@ nav ul li a:hover {
 
     .showcase-container {
         flex-direction: column;
-   
+
         padding: 20px 20px;
     }
 

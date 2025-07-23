@@ -18,9 +18,11 @@
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="preload" href="font/Outfit-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="/CSS/owl.carousel.min.css">
   <link rel="stylesheet" href="./CSS/style.css">
   <script src="/Js/script.js"></script>
+  <script src="/Js/jquery-3.4.1.min.js"></script>
+  <script src="/Js/owl.carousel.min.js"></script>
 </head>
 
 <body>
@@ -42,7 +44,7 @@
         <li><a href="#" class="nav-link">About Us</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#portfolio-section" class="nav-link">Portfolio</a></li>
-        <li><a href="#" class="nav-link">Blog</a></li>
+        <li><a href="#testimonials" class="nav-link">Blog</a></li>
       </ul>
       <a href="#" class="contact-btn nav-link">Contact Us</a>
     </nav>
@@ -169,7 +171,7 @@
 
 
   <section id="portfolio-section">
-     <h2>Portfolio</h2>
+    <h2>Portfolio</h2>
     <h3>Recent Showcase Work</h3>
 
 
@@ -190,7 +192,7 @@
           </div>
         </div>
       </div>
-       <div class="right-column">
+      <div class="right-column">
         <div class="blog-card">
           <img src="/Images/strategy.jpg" alt="">
           <div class="blog-content">
@@ -205,14 +207,59 @@
             <p>Creative UI design </p>
           </div>
         </div>
-       </div>
+      </div>
     </div>
   </section>
 
+  <!-- --------------------------------------------------------------------------------------------------------------- -->
 
-
+<section id="testimonials">
+  <div class="container">
+    <div class="testimonials_wrapper">
+      <div class="owl-carousel testimonials-active">
+        <div class="testimonials-item">
+          <img src="/Images/avatar.png" alt="">
+          <p>“Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and
+            the company providing the product or service.”</p>
+          <h2>Jacqueline Miller</h2>
+          <h3>CEO of an eduport</h3>
+        </div>
+        <div class="testimonials-item">
+          <img src="/Images/avatar.png" alt="">
+          <p>“Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and
+            the company providing the product or service.”</p>
+          <h2>Jacqueline Miller</h2>
+          <h3>CEO of an eduport</h3>
+        </div>
+        <div class="testimonials-item">
+          <img src="/Images/avatar.png" alt="">
+          <p>“Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and
+            the company providing the product or service.”</p>
+          <h2>Jacqueline Miller</h2>
+          <h3>CEO of an eduport</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
   <script>
+    function slider_carouselInit() {
+    $('.owl-carousel.testimonials-active').owlCarousel({
+        dots: false,
+        loop: true,
+        margin: 0,
+        items: 1,
+        autoplay: true,
+        nav: true,
+        navText: [
+          "<i class='fas fa-chevron-left'></i>",
+          "<i class='fas fa-chevron-right'></i>"
+        ],
+        smartSpeed: 1000,
+    });
+}
+slider_carouselInit();
 
   </script>
 </body>

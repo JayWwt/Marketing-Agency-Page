@@ -1,151 +1,212 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Staggered Flex Cards with Height</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Owl Carousel Testimonial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f8f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: Arial, sans-serif;
-      padding: 40px;
-      background-color: #fff;
-    }
+        .testimonial-card-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 768px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-bottom: 60px;
+        }
 
-    .flex-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
+        .owl-carousel.owl-theme {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
 
-    .left-column,
-    .right-column {
-      display: flex;
-      flex-direction: column;
-      gap: 30px;
-      width: calc(50% - 15px);
-    }
+        @media (min-width: 768px) {
+            .owl-carousel.owl-theme {
+                padding: 3rem;
+            }
+        }
 
-    .card {
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-      height: 440px; /* Fixed height */
-      display: flex;
-      flex-direction: column;
-    }
+        .item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 1rem 1.5rem 1rem;
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+        .item img {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1.5rem;
+            border: 4px solid #ffffff;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+        }
 
-    .card img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
+        .item blockquote {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            font-weight: 500;
+            color: #374151;
+            margin-bottom: 1.5rem;
+        }
 
-    .card-content {
-      padding: 20px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      flex: 1;
-    }
+        @media (min-width: 768px) {
+            .item blockquote {
+                font-size: 1.5rem;
+                line-height: 2rem;
+            }
+        }
 
-    .card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
+        .item .text-gray-600 {
+            color: #4b5563;
+        }
 
-    .card p {
-      color: #e34e4e;
-      font-weight: 500;
-      font-size: 0.9rem;
-    }
+        .item .font-semibold {
+            font-weight: 600;
+        }
 
-    /* Add top spacing to stagger the second column */
-    .right-column .card:first-child {
-      margin-top: 60px;
-    }
+        .item .text-lg {
+            font-size: 1.125rem;
+            line-height: 1.75rem;
+        }
 
-    /* Responsive */
-    @media (max-width: 768px) {
-      .flex-container {
-        flex-direction: column;
-      }
+        .item .text-sm {
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
 
-      .left-column,
-      .right-column {
-        width: 100%;
-      }
+        .item .text-gray-500 {
+            color: #6b7280;
+        }
 
-      .right-column .card:first-child {
-        margin-top: 0;
-      }
+        .owl-theme .owl-nav button {
+            background: #f75d74 !important;
+            color: white !important;
+            border-radius: 9999px !important;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem !important;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: none;
+            cursor: pointer;
+        }
 
-      .card {
-        height: auto;
-      }
+        .owl-theme .owl-nav button.owl-prev {
+            margin-right: 10px;
+        }
 
-      .card img {
-        height: 180px;
-      }
-    }
+        .owl-theme .owl-nav button.owl-next {
+            margin-left: 10px;
+        }
 
-    @media (max-width: 480px) {
-      .card img {
-        height: 150px;
-      }
-    }
-  </style>
+        .owl-theme .owl-nav button:hover {
+            background-color: #e04b61 !important;
+        }
+
+        .owl-theme .owl-nav {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
-  <div class="flex-container">
-    <!-- Left column -->
-    <div class="left-column">
-      <div class="card">
-        <img src="https://via.placeholder.com/560x399?text=Web+UI+Design" alt="Web UI Design">
-        <div class="card-content">
-          <h3>Web UI Design</h3>
-          <p>Creative UI design</p>
+    <div class="testimonial-card-wrapper">
+        <div class="owl-carousel owl-theme">
+            <div class="item">
+                <img src="https://placehold.co/100x100/f75d74/ffffff?text=JM" alt="Jacqueline Miller">
+                <blockquote>
+                    "Be genuine in your assessment, and provide constructive feedback to benefit both potential customers and the company providing the product or service."
+                </blockquote>
+                <div class="text-gray-600">
+                    <p class="font-semibold text-lg">Jacqueline Miller</p>
+                    <p class="text-sm text-gray-500">CEO of an eduport</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://placehold.co/100x100/6366f1/ffffff?text=JD" alt="John Doe">
+                <blockquote>
+                    "This product has truly transformed our workflow. The intuitive design and powerful features make it an indispensable tool for our team."
+                </blockquote>
+                <div class="text-gray-600">
+                    <p class="font-semibold text-lg">John Doe</p>
+                    <p class="text-sm text-gray-500">CTO of a Tech Startup</p>
+                </div>
+            </div>
+
+            <div class="item">
+                <img src="https://placehold.co/100x100/22c55e/ffffff?text=AS" alt="Alice Smith">
+                <blockquote>
+                    "Exceptional customer support and a robust solution. We've seen significant improvements since implementing this service."
+                </blockquote>
+                <div class="text-gray-600">
+                    <p class="font-semibold text-lg">Alice Smith</p>
+                    <p class="text-sm text-gray-500">Marketing Director</p>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/560x399?text=Web+Developing" alt="Web Developing">
-        <div class="card-content">
-          <h3>Web Developing</h3>
-          <p>Creative UI design</p>
-        </div>
-      </div>
     </div>
 
-    <!-- Right column -->
-    <div class="right-column">
-      <div class="card">
-        <img src="https://via.placeholder.com/560x399?text=Digital+Strategy" alt="Digital Strategy">
-        <div class="card-content">
-          <h3>Digital Strategy</h3>
-          <p>Creative UI design</p>
-        </div>
-      </div>
-      <div class="card">
-        <img src="https://via.placeholder.com/560x399?text=Digital+Marketing" alt="Digital Marketing">
-        <div class="card-content">
-          <h3>Digital Marketing</h3>
-          <p>Creative UI design</p>
-        </div>
-      </div>
-    </div>
-  </div>
+    <script>
+        $(document).ready(function(){
+            $(".owl-carousel").owlCarousel({
+                loop: true,
+                margin: 10,
+                nav: true,
+                dots: false,
+                autoplay: true,
+                autoplayTimeout: 5000,
+                autoplayHoverPause: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    },
+                    600: {
+                        items: 1
+                    },
+                    1000: {
+                        items: 1
+                    }
+                },
+                navText: [
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" /></svg>',
+                    '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" /></svg>'
+                ]
+            });
+        });
+    </script>
 
 </body>
 </html>
