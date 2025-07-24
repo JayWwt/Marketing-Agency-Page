@@ -19,13 +19,15 @@
   <link rel="preload" href="font/Outfit-VariableFont_wght.ttf" as="font" type="font/ttf" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.7.2/css/all.css" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v7.0.0/css/all.css" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="/CSS/owl.carousel.min.css">
   <link rel="stylesheet" href="./CSS/style.css">
 
   <script src="/Js/jquery-3.4.1.min.js"></script>
   <script src="/Js/owl.carousel.min.js"></script>
-    <script src="/Js/script.js"></script>
+  <script src="/Js/script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 </head>
 
 <body>
@@ -65,7 +67,9 @@
     <div class="content">
       <h5>Welcome To <span>Marketing Agency</span></h5>
       <h1>Designing the Future<br>with Canvas Lancer</h1>
-      <p>Lorem ipsum dolor sit amet consectetur. Aliquam quisque cursus proin adipiscing quis diam. Eu fringilla elit <br> commodo nec aliquet. Augue pharetra nibh co</p>
+      <p>Lorem ipsum dolor sit amet consectetur. Aliquam quisque cursus proin adipiscing quis diam. Eu fringilla elit
+        <br> commodo nec aliquet. Augue pharetra nibh co
+      </p>
       <div class="buttons">
         <a href="#" class="btn-hire">Hire Us</a>
         <a href="#" class="btn-portfolio">View Portfolio</a>
@@ -80,7 +84,7 @@
   <section id="services">
     <h2>Our Services</h2>
 
-    <h3>High-impact services<br>
+    <h3 data-aos="fade-right" data-aos-duration="500">High-impact services<br>
       for your business</h3>
 
     <div class="cards">
@@ -162,6 +166,11 @@
 
         </div>
       </div>
+
+      <div class="slide-button">
+        <div class="icon"><i class="fa-solid fa-angle-right"></i></div>
+        <div class="text">Start your Free Trial</div>
+      </div>
     </div>
 
 
@@ -215,40 +224,54 @@
 
 
   <section id="portfolio-section">
-  <h2>Portfolio</h2>
-  <h3>Recent Showcase Work</h3>
+    <h2>Portfolio</h2>
+    <h3>Recent Showcase Work</h3>
 
-  <div class="owl-carousel-portfolio">
-    <div class="blog-card">
-      <img src="/Images/design.jpg" alt="" height="400px">
-      <div class="blog-content">
-        <h4>Web UI Designing</h4>
-        <p>Creative UI design </p>
+    <div class="owl-carousel-portfolio">
+      <div class="blog-card">
+        <img src="/Images/design.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Web UI Designing</h4>
+          <p>Creative UI design </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="/Images/developing.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Web Developing</h4>
+          <p>Creative UI design </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="/Images/strategy.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Digital Strategy</h4>
+          <p>Creative UI design </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="/Images/marketing.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Digital Marketing</h4>
+          <p>Creative UI design </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="/Images/marketing.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Digital Marketing</h4>
+          <p>Creative UI design </p>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="/Images/marketing.jpg" alt="" height="400px">
+        <div class="blog-content">
+          <h4>Digital Marketing</h4>
+          <p>Creative UI design </p>
+        </div>
       </div>
     </div>
-    <div class="blog-card">
-      <img src="/Images/developing.jpg" alt="" height="400px">
-      <div class="blog-content">
-        <h4>Web Developing</h4>
-        <p>Creative UI design </p>
-      </div>
-    </div>
-    <div class="blog-card">
-      <img src="/Images/strategy.jpg" alt="" height="400px">
-      <div class="blog-content">
-        <h4>Digital Strategy</h4>
-        <p>Creative UI design </p>
-      </div>
-    </div>
-    <div class="blog-card">
-      <img src="/Images/marketing.jpg" alt="" height="400px">
-      <div class="blog-content">
-        <h4>Digital Marketing</h4>
-        <p>Creative UI design </p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- --------------------------------------------------------------------------------------------------------------- -->
 
@@ -338,99 +361,28 @@
           <p>119 Tanglewood Lane Gulfport, MS 39503</p>
         </div>
         <div class="col-8">
-          <i class="fa-brands fa-facebook-f" ></i>
-         <i class="fa-brands fa-instagram"></i>
-      <i class="fa-brands fa-square-linkedin"></i>
+          <i class="fa-brands fa-facebook-f"></i>
+          <i class="fa-brands fa-instagram"></i>
+          <i class="fa-brands fa-square-linkedin"></i>
         </div>
 
 
       </div>
     </div>
   </footer>
- <div id="scrollTopBox" onclick="scrollToTop()">
-        <i class="fa-solid fa-angle-up fa-bounce"></i>
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+ <div class="fab-container">
+    <div class="fab-icon"><i class="fas fa-plus" ></i></div>
+    <ul class="fab-menu">
+      <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+      <li><a href="#"><i class="fas fa-phone-alt"></i></a></li>
+      <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+    </ul>
+  </div>
 
   <!-- --------------------------------------------------------------------------------------------------------------- -->
   <script>
-    // function slider_carouselInit() {
-    //   $('.owl-carousel.testimonials-active').owlCarousel({
-    //     dots: false,
-    //     loop: true,
-    //     margin: 0,
-    //     items: 1,
-    //     autoplay: true,
-    //     nav: true,
-    //     navText: [
-    //       "<i class='fas fa-chevron-left'></i>",
-    //       "<i class='fas fa-chevron-right'></i>"
-    //     ],
-    //     smartSpeed: 1000,
-    //   });
-    // }
-    // slider_carouselInit();
 
-// ------------------------------------------------------------------------
-
-     const scrollBtn = document.getElementById("scrollTopBox");
-        window.onscroll = function () {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                scrollBtn.style.display = "block";
-            } else {
-                scrollBtn.style.display = "none";
-            }
-        };
-
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
-        }
 
 
   </script>

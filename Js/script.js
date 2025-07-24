@@ -1,13 +1,16 @@
 
 //For Toggle Button
-const nav = document.querySelector("nav");
-const navLinks = document.querySelectorAll(".nav-link");
+// Select all nav links
+document.addEventListener('DOMContentLoaded', function () {
+    const navLinks = document.querySelectorAll('.nav-link');
 
-navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("show");
+    navLinks.forEach(link => {
+        link.addEventListener('click', function () {
+            document.querySelector('nav').classList.remove('show');
+        });
     });
 });
+
 
 
 
@@ -70,7 +73,7 @@ $(document).ready(
             if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
                 scrollBtn.style.display = "block";
             } else {
-                scrollBtn.style.display = "none";
+                scrollBtn.style.display = "block";
             }
         };
 
@@ -116,3 +119,10 @@ $(document).ready(function () {
         togglePortfolioCarousel();
     });
 });
+
+
+
+$(document).ready(function () {
+    AOS.init();
+})
+

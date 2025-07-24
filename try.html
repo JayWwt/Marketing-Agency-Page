@@ -1,117 +1,156 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Free Trial Button</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .trial-button {
+      display: inline-flex;
+      align-items: center;
+      background-color: #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-family: Arial, sans-serif;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .trial-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .trial-button .icon {
+      width: 24px;
+      height: 24px;
+      background-color: #e94e77;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-right: 10px;
+      color: white;
+      font-size: 14px;
+    }
+
+    @media (max-width: 480px) {
+      .trial-button {
+        padding: 8px 16px;
+        font-size: 14px;
+      }
+
+      .trial-button .icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+        margin-right: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#" class="trial-button">
+    <div class="icon">➤</div>
+    Start your Free Trial
+  </a>
+</body>
+</html> -->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <!-- Character Encoding -->
-    <meta charset="UTF-8">
-    <!-- Viewport for Responsive Design -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Title of the Webpage -->
-    <title>My Website Title</title>
-    <!-- Description for SEO -->
-    <meta name="description" content="This is a sample website description used for SEO purposes.">
-    <!-- Keywords for SEO -->
-    <meta name="keywords" content="HTML, CSS, JavaScript, Web Design">
-    <!-- Author Info -->
-    <meta name="author" content="Your Name Here">
-    <!-- Favicon -->
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hover Arrow Slide with Text Hide</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: sans-serif;
+    }
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    .slide-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 10px 20px 10px 12px;
+      background-color: #ffffff;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 500;
+      color: #000;
+      cursor: pointer;
+      gap: 10px;
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
 
-    <!-- jQuery + Owl Carousel JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    .icon {
+      width: 24px;
+      height: 24px;
+      background-color: #e94e77;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 14px;
+      transition: transform 1s ease;
+      flex-shrink: 0;
+    }
 
-    <style>
-        #main-section {
-            max-width: 1440px;
-            margin: 0 auto;
-            padding: 50px 60px;
-        }
+    .text {
+      white-space: nowrap;
+      transition: opacity 0.5s ease, transform 1s ease;
+    }
 
-        .main-container {
-            margin-bottom: 30px;
-        }
+    /* Hover Effects */
+    .slide-button:hover .icon {
+      transform: translateX(160px);
+    }
 
-        .gallery-item img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 8px;
-        }
+    .slide-button:hover .text {
+      opacity: 0;
+      transform: translateX(-10px);
+    }
 
-        @media (min-width: 1025px) {
-            .owl-carousel {
-                display: flex !important;
-                flex-wrap: wrap;
-                gap: 20px 40px;
-            }
+    /* Responsive */
+    @media (max-width: 480px) {
+      .slide-button {
+        font-size: 14px;
+        padding: 8px 16px;
+      }
 
-            .owl-carousel .owl-stage-outer,
-            .owl-carousel .owl-stage,
-            .owl-carousel .owl-item {
-                all: unset;
-            }
-
-            .owl-carousel .gallery-item {
-                width: calc(50% - 20px);
-            }
-        }
-    </style>
+      .icon {
+        width: 20px;
+        height: 20px;
+        font-size: 12px;
+      }
+    }
+  </style>
 </head>
-
 <body>
-    <section id="main-section">
-        <div class="main-container">
-            <h1>Sample Layout</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde nemo placeat, iure minima exercitationem
-                distinctio adipisci tenetur quod veritatis ab explicabo nostrum ipsum asperiores? Ipsum accusantium
-                minima eos accusamus odio.</p>
-        </div>
 
-        <div class="gallery-wrapper owl-carousel">
-            <div class="gallery-item"><img src="/Images/design.jpg" alt="Image 1" /></div>
-            <div class="gallery-item"><img src="/Images/marketing.jpg" alt="Image 2" /></div>
-            <div class="gallery-item"><img src="/Images/strategy.jpg" alt="Image 3" /></div>
-            <div class="gallery-item"><img src="/Images/marketing.jpg" alt="Image 4" /></div>
-        </div>
-    </section>
-
-    <script>
-        let owlInitialized = false;
-
-        function initOrDestroyOwlCarousel() {
-            const $carousel = $('.owl-carousel');
-            const width = window.innerWidth;
-
-            if (width <= 1024 && !owlInitialized) {
-                $carousel.owlCarousel({
-                    items: 1,
-                    loop: true,
-                    margin: 20,
-                    autoplay: true,
-                    smartSpeed: 500,
-                    dots: false
-                });
-                owlInitialized = true;
-            }
-
-            if (width > 1024 && owlInitialized) {
-                $carousel.trigger('destroy.owl.carousel');
-                owlInitialized = false;
-            }
-        }
-
-        $(document).ready(initOrDestroyOwlCarousel);
-        $(window).resize(initOrDestroyOwlCarousel);
-
-    </script>
-
+  <div class="slide-button">
+    <div class="icon">➤</div>
+    <div class="text">Start your Free Trial</div>
+  </div>
 
 </body>
-
 </html>
